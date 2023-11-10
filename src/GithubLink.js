@@ -3,7 +3,7 @@ import "./App.css";
 
 function GithubLink() {
   return (
-    <p className="WeatherApp">
+    <p className="github-link">
       <a
         href="https://github.com/rupertforbes/react-weather-app"
         target="_blank"

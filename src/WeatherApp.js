@@ -30,27 +30,50 @@ function WeatherApp() {
   }
 
   let form = (
-    <form onSubmit={handleSubmit} className="WeatherApp">
+    <form onSubmit={handleSubmit} className="input-group search-form">
+      <input
+        type="text"
+        className="form-control input search-form"
+        placeholder="Enter a city..."
+        onChange={updateCity}
+      />
+      <input
+        type="submit"
+        value="Search"
+        className="input-group-text search search-form"
+      />
+    </form>
+  );
+
+  /*<form onSubmit={handleSubmit} className="WeatherApp">
       <input
         type="search"
         placeholder="Enter a city..."
         onChange={updateCity}
       />
-      <input type="submit" value="Search" />
-    </form>
-  );
+      <input type="submit" value="Search" className="input-group-text search" />
+    </form> */
 
   if (loaded) {
     return (
-      <div className="WeatherApp">
+      <div>
         {form}
-        <ul>
-          <li>Temperature: {Math.round(weather.temperature)}°C</li>
-          <li>Wind speed: {weather.wind}km/h</li>
-          <li>Humdity: {weather.humidity}%</li>
-          <li>Description: {weather.description}</li>
-          <img src={weather.icon} alt="icon" />
-        </ul>
+        <div className="row">
+          <div className="col-lg-8">
+            <h2>
+              <strong>{city}</strong>
+            </h2>
+            <ul>
+              <li>Wind speed: {weather.wind}km/h</li>
+              <li>Humdity: {weather.humidity}%</li>
+              <li>Description: {weather.description}</li>
+            </ul>
+          </div>
+          <div className="col-lg-4">
+            <img src={weather.icon} alt="icon" />
+            <p>{Math.round(weather.temperature)}°C</p>
+          </div>
+        </div>
       </div>
     );
   } else {
