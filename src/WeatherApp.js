@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import "./App.css";
-import Weather from "./Weather";
 import axios from "axios";
 
 function WeatherApp() {
   const [city, setCity] = useState("");
   const [loaded, setLoaded] = useState(false);
   const [weather, setWeather] = useState(null);
-
-  let iconURL = "https://openweathermap.org/img/wn/10d@2x.png";
 
   function displayWeather(response) {
     setLoaded(true);
@@ -52,7 +49,7 @@ function WeatherApp() {
           <li>Wind speed: {weather.wind}km/h</li>
           <li>Humdity: {weather.humidity}%</li>
           <li>Description: {weather.description}</li>
-          <img src={weather.icon} />
+          <img src={weather.icon} alt="icon" />
         </ul>
       </div>
     );
