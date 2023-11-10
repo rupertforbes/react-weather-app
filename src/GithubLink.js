@@ -1,11 +1,13 @@
 import React from "react";
+import "./App.css";
 
 function GithubLink() {
   return (
-    <p>
+    <p className="WeatherApp">
       <a
         href="https://github.com/rupertforbes/react-weather-app"
         target="_blank"
+        rel="noreferrer"
       >
         Open-source code
       </a>{" "}
@@ -13,3 +15,5 @@ function GithubLink() {
     </p>
   );
 }
+
+export default GithubLink;
