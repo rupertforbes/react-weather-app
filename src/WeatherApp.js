@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import axios from "axios";
+import WeatherIcon from "./WeatherIcon";
 
 function WeatherApp() {
   const [city, setCity] = useState("");
@@ -11,11 +12,12 @@ function WeatherApp() {
     setLoaded(true);
     console.log(response);
     setWeather({
+      city: response.data.name,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
-      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
     });
   }
 
@@ -30,7 +32,7 @@ function WeatherApp() {
   }
 
   let form = (
-    <form onSubmit={handleSubmit} className="input-group search-form">
+    <form onSubmit={handleSubmit} className="input-group search-form mb-5">
       <input
         type="text"
         className="form-control input search-form"
@@ -58,10 +60,10 @@ function WeatherApp() {
     return (
       <div>
         {form}
-        <div className="row">
+        <div className="row mx-3">
           <div className="col-lg-8">
             <h2>
-              <strong>{city}</strong>
+              <strong>{weather.city}</strong>
             </h2>
             <ul>
               <li>Wind speed: {weather.wind}km/h</li>
@@ -70,7 +72,7 @@ function WeatherApp() {
             </ul>
           </div>
           <div className="col-lg-4">
-            <img src={weather.icon} alt="icon" />
+            <WeatherIcon iconCode={weather.icon} />
             <p>{Math.round(weather.temperature)}°C</p>
           </div>
         </div>
