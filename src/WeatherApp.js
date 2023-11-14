@@ -3,6 +3,7 @@ import "./App.css";
 import axios from "axios";
 import TimeAndDate from "./TimeAndDate";
 import WeatherIcon from "./WeatherIcon";
+import Forecast from "./Forecast";
 
 function WeatherApp() {
   const [city, setCity] = useState("");
@@ -77,6 +78,9 @@ function WeatherApp() {
           <div className="col-md-4">
             <WeatherIcon iconCode={weather.icon} />
           </div>
+        </div>
+        <div className="row">
+          <Forecast city={weather.city} />
         </div>
       </div>
     );
