@@ -15,7 +15,7 @@ function WeatherIcon(props) {
     return (
       <ReactAnimatedWeather
         icon="CLEAR_NIGHT"
-        color="black"
+        color="#212529"
         size={200}
         animate={true}
       />
@@ -33,7 +33,7 @@ function WeatherIcon(props) {
     return (
       <ReactAnimatedWeather
         icon="PARTLY_CLOUDY_NIGHT"
-        color="black"
+        color="#212529"
         size={200}
         animate={true}
       />

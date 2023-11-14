@@ -53,7 +53,7 @@ function WeatherApp() {
       <div>
         {form}
         <div className="row mx-3">
-          <div className="col-lg-8">
+          <div className="col-md-8">
             <h2>
               <strong>{weather.city}</strong>
             </h2>
@@ -66,15 +66,15 @@ function WeatherApp() {
                 </p>
               </div>
               <div className="col-sm-9">
-                <ul>
-                  <li>Wind speed: {weather.wind}km/h</li>
-                  <li>Humdity: {weather.humidity}%</li>
-                  <li>Description: {weather.description}</li>
-                </ul>
+                <p className="weather-data">Wind speed: {weather.wind}km/h</p>
+                <p className="weather-data">Humdity: {weather.humidity}%</p>
+                <p className="weather-data">
+                  Description: {weather.description}
+                </p>
               </div>
             </div>
           </div>
-          <div className="col-lg-4">
+          <div className="col-md-4">
             <WeatherIcon iconCode={weather.icon} />
           </div>
         </div>

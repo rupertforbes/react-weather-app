@@ -19,3 +19,9 @@ h2 {
   font-size: 30px;
   color: rgb(125, 125, 125);
 }
+
+.weather-data {
+  color: rgb(125, 125, 125);
+  line-height: 0.7;
+  margin-left: 10px;
+}
