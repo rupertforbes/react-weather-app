@@ -15,8 +15,13 @@
   background-color: white;
   padding: 30px;
   font-family: "Fira sans";
+  border: solid 1px rgb(239, 239, 239);
 }
 
 .github-link {
   padding-left: 30px;
+}
+
+body {
+  background-color: rgb(240, 240, 240);
 }

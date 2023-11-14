@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import axios from "axios";
+import TimeAndDate from "./TimeAndDate";
 
 function WeatherApp() {
   const [city, setCity] = useState("");
@@ -31,7 +32,7 @@ function WeatherApp() {
   }
 
   let form = (
-    <form onSubmit={handleSubmit} className="input-group search-form mb-5">
+    <form onSubmit={handleSubmit} className="input-group search-form mb-4">
       <input
         type="text"
         className="form-control input search-form"
@@ -51,10 +52,13 @@ function WeatherApp() {
       <div>
         {form}
         <div className="row mx-3">
+          <h2>
+            <strong>{weather.city}</strong>
+          </h2>
+          <TimeAndDate />
+        </div>
+        <div className="row mx-3">
           <div className="col-lg-8">
-            <h2>
-              <strong>{weather.city}</strong>
-            </h2>
             <ul>
               <li>Wind speed: {weather.wind}km/h</li>
               <li>Humdity: {weather.humidity}%</li>
