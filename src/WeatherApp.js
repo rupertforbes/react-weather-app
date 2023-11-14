@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
 import axios from "axios";
-import WeatherIcon from "./WeatherIcon";
 
 function WeatherApp() {
   const [city, setCity] = useState("");
@@ -47,15 +46,6 @@ function WeatherApp() {
     </form>
   );
 
-  /*<form onSubmit={handleSubmit} className="WeatherApp">
-      <input
-        type="search"
-        placeholder="Enter a city..."
-        onChange={updateCity}
-      />
-      <input type="submit" value="Search" className="input-group-text search" />
-    </form> */
-
   if (loaded) {
     return (
       <div>
@@ -72,7 +62,6 @@ function WeatherApp() {
             </ul>
           </div>
           <div className="col-lg-4">
-            <WeatherIcon iconCode={weather.icon} />
             <p>{Math.round(weather.temperature)}°C</p>
           </div>
         </div>
