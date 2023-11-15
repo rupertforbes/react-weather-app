@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ForecastData from "./ForecastData";
 
 export default function Forecast(props) {

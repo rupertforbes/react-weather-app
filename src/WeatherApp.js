@@ -12,7 +12,6 @@ function WeatherApp() {
 
   function displayWeather(response) {
     setLoaded(true);
-    console.log(response);
     setWeather({
       city: response.data.name,
       temperature: response.data.main.temp,
@@ -79,9 +78,7 @@ function WeatherApp() {
             <WeatherIcon iconCode={weather.icon} />
           </div>
         </div>
-        <div className="row">
-          <Forecast city={weather.city} />
-        </div>
+        <Forecast city={weather.city} />
       </div>
     );
   } else {
